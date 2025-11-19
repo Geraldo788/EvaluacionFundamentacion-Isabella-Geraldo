@@ -20,7 +20,7 @@ Salidas:
 • Promedio final. 
 • Categoría de rendimiento. */
 
-function calcularPromedio(notas) {
+/*function calcularPromedio(notas) {
     let suma = 0;
     for (let i = 0; i < notas.length; i++) {
         suma += notas[i];
@@ -49,5 +49,25 @@ for (let i = 0; i < cantidad; i++) {
 
 let resultado = calcularPromedio(notas);
 console.log("Promedio final: " + resultado.promedio.toFixed(2));
-console.log("Categoría de rendimiento: " + resultado.rendimiento);
+console.log("Categoría de rendimiento: " + resultado.rendimiento); */
 
+// ==========================================================================================
+
+
+import {
+    promedio,
+    rendimiento,
+} from "./modulo/modulo1.js";
+
+let cantidadnotas = parseInt(prompt("ingrese Cantidad de notas"))
+const notas = [];
+
+for (let i = 0; i < cantidadnotas; i++){
+    console.log(i)
+    notas.push(parseFloat(prompt(`Ingrese nota ${i}`)))
+}
+
+let calculo = promedio(notas);
+let nivel = rendimiento(calculo);
+
+alert(`Promedio: ${calculo}\nRendimiento: ${nivel}`);
